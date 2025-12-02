@@ -65,7 +65,7 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 		let player = event.source.player;
 
 		if (player.hasEffect("arc_expansion:unbrilliant_glory_effect")) {
-			event.amount *= 2.5; // 增加150%攻击力
+			event.amount *= 0; // 增加150%攻击力
 
 			let entityList = getLivingWithinRadius(
 				player.getLevel(),
@@ -81,6 +81,12 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 					let normalizedVecToEntity = vecToEntity.normalize();
 					let dotProduct = look.dot(normalizedVecToEntity);
 					if (dotProduct > 0) {
+						entity.getServer().scheduleInTicks(1, () => {
+							entity.attack(
+								DamageSource.playerAttack(player),
+								event.amount * 2.5, // 造成 11% 攻击力的真实伤害
+							);
+						});
 						entity.getServer().scheduleInTicks(1, () => {
 							entity.attack(
 								DamageSource.playerAttack(player)

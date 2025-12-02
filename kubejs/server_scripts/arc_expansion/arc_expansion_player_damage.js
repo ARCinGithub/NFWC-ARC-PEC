@@ -71,16 +71,18 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 			new Vec3(player.x, player.y, player.z),
 			6,
 		);
-		entityList.forEach((e) => {
-			if (!e.isPlayer() && mrqxCheckTarget(e, player)) {
-				e.getServer().scheduleInTicks(1, () => {
-					e.attack(
+		entityList.forEach((entity) => {
+			if (!entity.isPlayer() && entity.isLiving) {
+				entity.getServer().scheduleInTicks(1, () => {
+					entity.attack(
 						DamageSource.playerAttack(player)
 							.bypassArmor()
 							.bypassEnchantments()
 							.bypassInvul()
 							.bypassMagic(),
-						event.amount * 0.11,
+						player.getAttributeTotalValue(
+							"minecraft:generic.attack_damage",
+						) * 0.11,
 					);
 				});
 			}

@@ -47,12 +47,12 @@ const dlcTemplateOrganPlayerKeyPressedOnlyStrategies = {
 		// if (duration > 0) {
 		player.potionEffects.add(
 			"arc_expansion:unbrilliant_glory_effect",
-			26,
+			20 * 26,
 			0,
 			false,
 			false,
 		);
-		player.addItemCooldown("arc_expansion:unbrilliant_glory", 71);
+		player.addItemCooldown("arc_expansion:unbrilliant_glory", 20 * 71);
 		// }
 	},
 };

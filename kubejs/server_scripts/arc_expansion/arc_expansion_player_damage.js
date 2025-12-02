@@ -62,10 +62,11 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 
 	// “未照耀的荣光”
 	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
+		let player = event.source.player;
+
 		if (player.hasEffect("arc_expansion:unbrilliant_glory_effect")) {
 			event.amount *= 2.5; // 增加150%攻击力
 
-			let player = event.source.player;
 			let entityList = getLivingWithinRadius(
 				player.getLevel(),
 				new Vec3(player.x, player.y, player.z),

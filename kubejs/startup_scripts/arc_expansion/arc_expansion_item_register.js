@@ -533,4 +533,46 @@ StartupEvents.registry("item", (event) => {
 		.tag("itemborders:gold")
 		.tag("kubejs:active_only")
 		.tag("kubejs:arc_expansion");
+
+	// 注册 Unbrilliant Glory（不耀之辉）
+	registerOrgan(
+		new Organ("arc_expansion:unbrilliant_glory")
+			// 基础描述（default）
+			.addTextLines("default", [
+				Text.gray({
+					translate: "arc_expansion.tooltips.unbrilliant_glory.1",
+				}),
+			])
+
+			// 特殊效果描述（alt）
+			.addTextLines("alt", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.unbrilliant_glory.2",
+				}),
+			])
+			.addTextLines("alt", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.unbrilliant_glory.3",
+				}),
+			])
+
+			// 基础属性（随意，可更换）
+			.addScore("strength", 1.5)
+
+			// 完成构建
+			.build(),
+	)
+		// 图标贴图（你需要放置该文件）
+		.texture("arc_expansion:item/organs/unbrilliant_glory")
+
+		// 边框（可改 iron/gold）
+		.tag("itemborders:gold")
+
+		// 类型标签（伤害型 --> damage）
+		.tag("kubejs:damage")
+
+		// 额外种类标签（你在 global 定义的 arc_expansion 类型）
+		.tag("kubejs:arc_expansion");
 });

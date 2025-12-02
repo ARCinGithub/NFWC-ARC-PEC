@@ -62,31 +62,36 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 
 	// “未照耀的荣光”
 	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
-		event.amount *= 2.5;
+		event.amount *= 2.5; // 增加150%攻击力
 
 		let player = event.source.player;
 		let entityList = getLivingWithinRadius(
 			player.getLevel(),
 			new Vec3(player.x, player.y, player.z),
 			6,
-		);
-
+		); // 获取6格内生物
 		let look = player.getViewVector(1.0);
-
 		entityList.forEach((entity) => {
-			if (entity.isLiving) {
-				entity.getServer().scheduleInTicks(1, () => {
-					entity.attack(
-						DamageSource.playerAttack(player)
-							.bypassArmor()
-							.bypassEnchantments()
-							.bypassInvul()
-							.bypassMagic(),
-						player.getAttributeTotalValue(
-							"minecraft:generic.attack_damage",
-						) * 0.11,
-					);
-				});
+			if (entity.isLiving && entity.id != player.id) {
+				let entityVec = new Vec3(entity.x, entity.y, entity.z);
+				let playerVec = new Vec3(player.x, player.y, player.z);
+				let vecToEntity = entityVec.subtract(playerVec);
+				let normalizedVecToEntity = vecToEntity.normalize();
+				let dotProduct = look.dot(normalizedVecToEntity);
+				if (dotProduct > 0) {
+					entity.getServer().scheduleInTicks(1, () => {
+						entity.attack(
+							DamageSource.playerAttack(player)
+								.bypassArmor()
+								.bypassEnchantments()
+								.bypassInvul()
+								.bypassMagic(),
+							player.getAttributeTotalValue(
+								"minecraft:generic.attack_damage",
+							) * 0.11, // 造成 11% 攻击力的真实伤害
+						);
+					});
+				}
 			}
 		});
 	},

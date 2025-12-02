@@ -65,8 +65,6 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 		let player = event.source.player;
 
 		if (player.hasEffect("arc_expansion:unbrilliant_glory_effect")) {
-			event.amount *= 0; // 增加150%攻击力
-
 			let entityList = getLivingWithinRadius(
 				player.getLevel(),
 				new Vec3(player.x, player.y, player.z),

@@ -561,5 +561,6 @@ StartupEvents.registry("item", (event) => {
 	)
 		.texture("arc_expansion:item/organs/unbrilliant_glory")
 		.tag("itemborders:gold")
-		.tag("kubejs:damage_only");
+		.tag("kubejs:damage_only")
+		.tag("kubejs:key_pressed");
 });

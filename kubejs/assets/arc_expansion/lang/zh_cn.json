@@ -64,5 +64,12 @@
 	"item.arc_expansion.example_organ_player_tick_only": "示例器官-唯一玩家刻",
 	"item.arc_expansion.example_organ_rclick": "示例器官-右键点击",
 	"item.arc_expansion.example_organ_rclick_only": "示例器官-唯一右键点击",
-	"itemGroup.kubejs.arc_expansion": "DLC示例器官"
+	"itemGroup.kubejs.arc_expansion": "ARC扩展包",
+
+	"itemGroup.kubejs.unbrilliant_glory": "未照耀的荣光",
+	"arc_expansion.tooltips.unbrilliant_glory.1": "“我仍然......听得见那声叹息。”",
+	"arc_expansion.tooltips.unbrilliant_glory.2": "激活后，攻击力增加150%",
+	"arc_expansion.tooltips.unbrilliant_glory.3": "造成伤害时，对自身前方6格所有敌人额外附带11%攻击力的真实伤害",
+	"arc_expansion.tooltips.unbrilliant_glory.4": "使造成伤害-25%",
+	"arc_expansion.tooltips.unbrilliant_glory.5": "冷却时间71秒"
 }

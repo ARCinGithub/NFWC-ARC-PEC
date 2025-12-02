@@ -556,6 +556,18 @@ StartupEvents.registry("item", (event) => {
 					translate: "arc_expansion.tooltips.unbrilliant_glory.3",
 				}),
 			])
+			.addTextLines("crtl", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "rc_expansion.tooltips.unbrilliant_glory.4",
+				}),
+			])
+			.addTextLines("crtl", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "rc_expansion.tooltips.unbrilliant_glory.5",
+				}),
+			])
 			.addScore("strength", 1.5)
 			.build(),
 	)

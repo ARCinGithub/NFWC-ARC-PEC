@@ -59,6 +59,93 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 			}
 		});
 	},
+
+	// “未照耀的荣光”
+	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
+		// ====================== 基础伤害提升 +150% ======================
+		event.amount *= 2.5;
+
+		let player = event.source.player;
+		let entity = event.entity;
+
+		if (!player || !entity) return;
+
+		let playerPos = new Vec3(player.x, player.y, player.z);
+		let entityPos = entity.position();
+
+		// ====================== 距离判定（<6格） ======================
+		let distance = entityPos.distanceTo(playerPos);
+		if (distance >= 6) return;
+
+		// ====================== 前半圆判定 ======================
+		// 玩家视角方向（look vector）
+		let look = player.getViewVector(1.0);
+		// 玩家 → 实体 方向
+		let dir = entityPos.subtract(playerPos).normalize();
+
+		// dot > 0 → 实体在玩家正前方180°区域内
+		let dot = look.x * dir.x + look.y * dir.y + look.z * dir.z;
+		if (dot <= 0) return; // 在背后，不触发真实伤害
+
+		// ====================== 真实伤害触发 ======================
+		event.source.bypassArmor();
+		event.source.bypassEnchantments();
+		event.source.bypassInvul();
+		event.source.bypassMagic();
+
+		let bonus =
+			player.getAttributeTotalValue("minecraft:generic.attack_damage") *
+			0.11;
+
+		entity.attack(
+			DamageSource.playerAttack(player)
+				.bypassArmor()
+				.bypassEnchantments()
+				.bypassInvul()
+				.bypassMagic(),
+			bonus,
+		);
+
+		// ====================== 金色半圆粒子效果 ======================
+		let level = player.getLevel();
+		let particle = "minecraft:glow"; // 金色效果推荐使用 glow
+
+		let steps = 40; // 半圆粒子分段数量（越高越密集）
+
+		for (let i = 0; i < steps; i++) {
+			// 半圆角度：-90°～+90°
+			let angle = -Math.PI / 2 + (i / (steps - 1)) * Math.PI;
+
+			// 玩家朝向（水平）
+			let yaw = player.getYRot() * (Math.PI / 180);
+
+			// 粒子在玩家前方半圆弧上的方向
+			let dirX = Math.cos(angle + yaw);
+			let dirZ = Math.sin(angle + yaw);
+
+			// 粒子生成位置（稍微向前 + 提高一点）
+			let startX = player.x + dirX * 0.8;
+			let startY = player.y + 1.2;
+			let startZ = player.z + dirZ * 0.8;
+
+			// 粒子速度（向外扩散）
+			let speed = 0.2;
+			let velX = dirX * speed;
+			let velZ = dirZ * speed;
+
+			// 生成粒子
+			level.spawnParticle(
+				particle,
+				false,
+				startX,
+				startY,
+				startZ,
+				velX,
+				0.02,
+				velZ,
+			);
+		}
+	},
 };
 
 var assign_organ_player_damage_only = Object.assign(

@@ -543,7 +543,6 @@ StartupEvents.registry("item", (event) => {
 					translate: "arc_expansion.tooltips.unbrilliant_glory.1",
 				}),
 			])
-
 			// 特殊效果描述（alt）
 			.addTextLines("alt", [
 				LEADING_SYMBOL,

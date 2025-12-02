@@ -65,26 +65,30 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 		event.amount *= 2.5;
 
 		let player = event.source.player;
-		let entity = event.entity;
-		let entityList = getLivingWithinRadius(
-			player.getLevel(),
-			new Vec3(player.x, player.y, player.z),
-			6,
-		);
+		let playerPos = new Vec3(player.x, player.y, player.z);
+		let look = player.getViewVector(1.0); // 玩家朝向向量
+		let entityList = getLivingWithinRadius(player.getLevel(), playerPos, 6); // 获取半径6的所有实体
 		entityList.forEach((entity) => {
-			if (!entity.isPlayer() && entity.isLiving) {
-				entity.getServer().scheduleInTicks(1, () => {
-					entity.attack(
-						DamageSource.playerAttack(player)
-							.bypassArmor()
-							.bypassEnchantments()
-							.bypassInvul()
-							.bypassMagic(),
-						player.getAttributeTotalValue(
-							"minecraft:generic.attack_damage",
-						) * 0.11,
-					);
-				});
+			if (entity.isLiving) {
+				// 玩家 → 实体方向
+				let dir = entity.position().subtract(playerPos).normalize();
+				// 点积判断是否在玩家正前方（dot > 0）
+				let dot = look.x * dir.x + look.y * dir.y + look.z * dir.z;
+				if (dot >= 0) {
+					// 延迟一刻执行真实伤害
+					entity.getServer().scheduleInTicks(1, () => {
+						entity.attack(
+							DamageSource.playerAttack(player)
+								.bypassArmor()
+								.bypassEnchantments()
+								.bypassInvul()
+								.bypassMagic(),
+							player.getAttributeTotalValue(
+								"minecraft:generic.attack_damage",
+							) * 0.11,
+						);
+					});
+				}
 			}
 		});
 	},

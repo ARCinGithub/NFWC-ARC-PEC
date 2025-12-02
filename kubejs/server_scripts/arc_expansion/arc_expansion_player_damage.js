@@ -12,35 +12,6 @@ const dlcTemplateOrganPlayerDamageStrategies = {
 		// 造成的伤害变为110%
 		event.amount *= 1.1;
 	},
-
-	// “未照耀的荣光”
-	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
-		event.amount *= 2.5;
-
-		let player = event.source.player;
-		let entity = event.entity;
-		let entityList = getLivingWithinRadius(
-			player.getLevel(),
-			new Vec3(player.x, player.y, player.z),
-			6,
-		);
-		entityList.forEach((e) => {
-			if (!e.isPlayer() && mrqxCheckTarget(e, player)) {
-				e.getServer().scheduleInTicks(1, () => {
-					e.attack(
-						DamageSource.playerAttack(player)
-							.bypassArmor()
-							.bypassEnchantments()
-							.bypassInvul()
-							.bypassMagic(),
-						player.getAttributeTotalValue(
-							"minecraft:generic.attack_damage",
-						) * 0.11,
-					);
-				});
-			}
-		});
-	},
 };
 
 var assign_organ_player_damage = Object.assign(
@@ -83,6 +54,33 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 					entity.attack(
 						DamageSource.playerAttack(player),
 						event.amount * 0.1,
+					);
+				});
+			}
+		});
+	},
+
+	// “未照耀的荣光”
+	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
+		event.amount *= 2.5;
+
+		let player = event.source.player;
+		let entity = event.entity;
+		let entityList = getLivingWithinRadius(
+			player.getLevel(),
+			new Vec3(player.x, player.y, player.z),
+			6,
+		);
+		entityList.forEach((e) => {
+			if (!e.isPlayer() && mrqxCheckTarget(e, player)) {
+				e.getServer().scheduleInTicks(1, () => {
+					e.attack(
+						DamageSource.playerAttack(player)
+							.bypassArmor()
+							.bypassEnchantments()
+							.bypassInvul()
+							.bypassMagic(),
+						event.amount * 0.11,
 					);
 				});
 			}

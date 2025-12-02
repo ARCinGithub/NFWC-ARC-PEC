@@ -31,6 +31,30 @@ const dlcTemplateOrganPlayerKeyPressedOnlyStrategies = {
 			20 * 15,
 		);
 	},
+
+	// "未照耀的荣光"
+	"arc_expansion:unbrilliant_glory": function (event, organ) {
+		let player = event.player;
+		// let resCount = player.persistentData.getInt(resourceCount);
+		// let typeMap = getPlayerChestCavityTypeMap(player);
+		// let duration = 26;
+		// if (typeMap.has("kubejs:dragon")) {
+		// 	duration += typeMap.get("kubejs:dragon").length * 30 * 20;
+		// }
+		// if (typeMap.has("kubejs:rose")) {
+		// 	duration += typeMap.get("kubejs:rose").length * 30 * 20;
+		// }
+		// if (duration > 0) {
+		player.potionEffects.add(
+			"arc_expansion:unbrilliant_glory_effect",
+			26,
+			0,
+			false,
+			false,
+		);
+		player.addItemCooldown("arc_expansion:unbrilliant_glory", 71);
+		// }
+	},
 };
 
 var assign_organ_player_key_pressed_only = Object.assign(

@@ -556,13 +556,13 @@ StartupEvents.registry("item", (event) => {
 					translate: "arc_expansion.tooltips.unbrilliant_glory.3",
 				}),
 			])
-			.addTextLines("crtl", [
+			.addTextLines("ctrl", [
 				LEADING_SYMBOL,
 				Text.gray({
 					translate: "rc_expansion.tooltips.unbrilliant_glory.4",
 				}),
 			])
-			.addTextLines("crtl", [
+			.addTextLines("ctrl", [
 				LEADING_SYMBOL,
 				Text.gray({
 					translate: "rc_expansion.tooltips.unbrilliant_glory.5",

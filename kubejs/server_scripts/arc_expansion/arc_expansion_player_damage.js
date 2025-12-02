@@ -62,108 +62,38 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 
 	// “未照耀的荣光”
 	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
+		let player = event.source.player;
+		let entity = event.entity;
+
+		if (!player || !entity) return event; // 必须返回 event
+
 		// ====================== 基础伤害提升 +150% ======================
 		event.amount *= 2.5;
 
-		let player = event.source.player;
-		let entity = event.entity;
-		if (!player || !entity) return event;
-
+		// ====================== 距离判定（<6格） ======================
 		let playerPos = new Vec3(player.x, player.y, player.z);
 		let entityPos = entity.position();
-
-		// ====================== 前半圆 + 6格范围判定 ======================
 		let distance = entityPos.distanceTo(playerPos);
+
 		if (distance < 6) {
-			let look = player.getViewVector(1.0);
-			let dir = entityPos.subtract(playerPos).normalize();
-			let dot = look.x * dir.x + look.y * dir.y + look.z * dir.z;
+			// ====================== 真实伤害 ======================
+			let bonus =
+				player.getAttributeTotalValue(
+					"minecraft:generic.attack_damage",
+				) * 0.11;
 
-			if (dot > 0) {
-				// 前半圆内才生效
-				// ====================== 真实伤害触发 ======================
-				let bonus =
-					player.getAttributeTotalValue(
-						"minecraft:generic.attack_damage",
-					) * 0.11;
-
-				entity.attack(
-					DamageSource.playerAttack(player)
-						.bypassArmor()
-						.bypassEnchantments()
-						.bypassInvul()
-						.bypassMagic(),
-					bonus,
-				);
-
-				// ====================== 金色半圆粒子效果 ======================
-				let level = player.getLevel();
-				let particle = "minecraft:glow";
-				let steps = 40;
-
-				for (let i = 0; i < steps; i++) {
-					let angle = -Math.PI / 2 + (i / (steps - 1)) * Math.PI;
-					let yaw = player.getYRot() * (Math.PI / 180);
-
-					let dirX = Math.cos(angle + yaw);
-					let dirZ = Math.sin(angle + yaw);
-
-					let startX = player.x + dirX * 0.8;
-					let startY = player.y + 1.2;
-					let startZ = player.z + dirZ * 0.8;
-
-					let speed = 0.2;
-					let velX = dirX * speed;
-					let velZ = dirZ * speed;
-
-					level.spawnParticle(
-						particle,
-						false,
-						startX,
-						startY,
-						startZ,
-						velX,
-						0.02,
-						velZ,
-					);
-				}
-			}
+			entity.attack(
+				DamageSource.playerAttack(player)
+					.bypassArmor()
+					.bypassEnchantments()
+					.bypassInvul()
+					.bypassMagic(),
+				bonus,
+			);
 		}
 
-		// ====================== 可扩展效果：类似“耀阳”可遍历核心次数触发周围伤害 ======================
-		if (mrqxGetCoreOfKnightCount(player) > 0) {
-			for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
-				let entityList = getLivingWithinRadius(
-					player.getLevel(),
-					playerPos,
-					6,
-				);
-				entityList.forEach((e) => {
-					if (!e.isPlayer()) {
-						let dir = e.position().subtract(playerPos).normalize();
-						let look = player.getViewVector(1.0);
-						let dot =
-							look.x * dir.x + look.y * dir.y + look.z * dir.z;
-						if (dot > 0) {
-							e.getServer().scheduleInTicks(1, () => {
-								e.attack(
-									DamageSource.playerAttack(player)
-										.bypassArmor()
-										.bypassEnchantments()
-										.bypassInvul()
-										.bypassMagic(),
-									player.getAttributeTotalValue(
-										"minecraft:generic.attack_damage",
-									) * 0.11,
-								);
-							});
-						}
-					}
-				});
-			}
-		}
-
-		return event; // 保证原攻击逻辑继续
+		// ====================== 保证原攻击继续 ======================
+		return event;
 	},
 };
 

@@ -62,38 +62,31 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 
 	// “未照耀的荣光”
 	"arc_expansion:unbrilliant_glory": function (event, organ, data) {
-		let player = event.source.player;
-		let entity = event.entity;
-
-		if (!player || !entity) return event; // 必须返回 event
-
-		// ====================== 基础伤害提升 +150% ======================
 		event.amount *= 2.5;
 
-		// ====================== 距离判定（<6格） ======================
-		let playerPos = new Vec3(player.x, player.y, player.z);
-		let entityPos = entity.position();
-		let distance = entityPos.distanceTo(playerPos);
-
-		if (distance < 6) {
-			// ====================== 真实伤害 ======================
-			let bonus =
-				player.getAttributeTotalValue(
-					"minecraft:generic.attack_damage",
-				) * 0.11;
-
-			entity.attack(
-				DamageSource.playerAttack(player)
-					.bypassArmor()
-					.bypassEnchantments()
-					.bypassInvul()
-					.bypassMagic(),
-				bonus,
-			);
-		}
-
-		// ====================== 保证原攻击继续 ======================
-		return event;
+		let player = event.source.player;
+		let entity = event.entity;
+		let entityList = getLivingWithinRadius(
+			player.getLevel(),
+			new Vec3(player.x, player.y, player.z),
+			6,
+		);
+		entityList.forEach((e) => {
+			if (!e.isPlayer() && mrqxCheckTarget(e, player)) {
+				e.getServer().scheduleInTicks(1, () => {
+					e.attack(
+						DamageSource.playerAttack(player)
+							.bypassArmor()
+							.bypassEnchantments()
+							.bypassInvul()
+							.bypassMagic(),
+						player.getAttributeTotalValue(
+							"minecraft:generic.attack_damage",
+						) * 0.11,
+					);
+				});
+			}
+		});
 	},
 };
 

@@ -5,4 +5,8 @@ StartupEvents.registry("mob_effect", (event) => {
 		.create("arc_expansion:unbrilliant_glory_effect")
 		.beneficial()
 		.color(Color.YELLOW_DYE);
+	event
+		.create("arc_expansion:stratagem_meltdown_effect")
+		.beneficial()
+		.color(Color.GREEN_DYE);
 });

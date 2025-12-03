@@ -28,6 +28,28 @@ const dlcTemplateOrganActiveStrategies = {
 			),
 		);
 	},
+
+	// “策略：熔毁”
+	"arc_expansion:stratagem_meltdown": function (player, organ, attributeMap) {
+		let playerChestInstance = player.getChestCavityInstance();
+		playerChestInstance.organScores.put(
+			new ResourceLocation("chestcavity", "health"),
+			new $Float(
+				playerChestInstance
+					.getOrganScores()
+					.get(new ResourceLocation("chestcavity", "health")) + 500,
+			),
+		);
+		attributeMapValueAddition(attributeMap, global.ATTACK_SPEED, 1.5);
+		let player = event.player;
+		player.potionEffects.add(
+			"arc_expansion:unbrilliant_glory_effect",
+			20 * 2,
+			0,
+			false,
+			false,
+		);
+	},
 };
 
 var assign_organ_active = Object.assign(

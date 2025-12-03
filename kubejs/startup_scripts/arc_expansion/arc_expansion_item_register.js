@@ -534,7 +534,7 @@ StartupEvents.registry("item", (event) => {
 		.tag("kubejs:active_only")
 		.tag("kubejs:arc_expansion");
 
-	// "未照耀的荣光"
+	// “未照耀的荣光”
 	registerOrgan(
 		new Organ("arc_expansion:unbrilliant_glory")
 			// 基础描述（default）
@@ -575,4 +575,47 @@ StartupEvents.registry("item", (event) => {
 		.tag("itemborders:gold")
 		.tag("kubejs:damage_only")
 		.tag("kubejs:key_pressed");
+
+	// “未照耀的荣光”
+	registerOrgan(
+		new Organ("arc_expansion:stratagem_meltdown")
+			// 基础描述（default）
+			.addTextLines("default", [
+				Text.gray({
+					translate: "arc_expansion.tooltips.stratagem_meltdown.1",
+				}),
+			])
+			// 特殊效果描述（alt）
+			.addTextLines("alt", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.stratagem_meltdown.2",
+				}),
+			])
+			.addTextLines("alt", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.stratagem_meltdown.3",
+				}),
+			])
+			.addTextLines("ctrl", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.stratagem_meltdown.4",
+				}),
+			])
+			.addTextLines("ctrl", [
+				LEADING_SYMBOL,
+				Text.gray({
+					translate: "arc_expansion.tooltips.stratagem_meltdown.5",
+				}),
+			])
+			.addScore("strength", 1.5)
+			.addScore("health", 2)
+			.build(),
+	)
+		.texture("arc_expansion:item/organs/stratagem_meltdown")
+		.tag("itemborders:gold")
+		.tag("kubejs:damage_only")
+		.tag("kubejs:active");
 });

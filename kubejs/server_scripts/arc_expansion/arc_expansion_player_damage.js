@@ -104,6 +104,46 @@ const dlcTemplateOrganPlayerDamageOnlyStrategies = {
 			event.amount *= 0.75;
 		}
 	},
+
+	// “策略：熔毁”
+	"arc_expansion:stratagem_meltdown": function (event, organ, data) {
+		let player = event.source.player;
+
+		if (player.hasEffect("arc_expansion:stratagem_meltdown_effect")) {
+			if (
+				event.player.getHealth() + event.amount * 0.5 <
+				event.player.getMaxHealth()
+			) {
+				// 直接设置玩家的新血量
+				event.player.setHealth(
+					event.player.getHealth() + event.amount * 0.5,
+				);
+			} else {
+				event.player.setHealth(event.player.getMaxHealth());
+			}
+			let entityList = getLivingWithinRadius(
+				player.getLevel(),
+				new Vec3(player.x, player.y, player.z),
+				3,
+			); // 获取3格内生物
+			entityList.forEach((entity) => {
+				if (entity.isLiving()) {
+					entity.getServer().scheduleInTicks(1, () => {
+						entity.attack(
+							DamageSource.playerAttack(player)
+								.bypassArmor()
+								.bypassEnchantments()
+								.bypassInvul()
+								.bypassMagic(),
+							(event.amount *= 3.8),
+						);
+					});
+				}
+			});
+		} else {
+			event.amount *= 1.15;
+		}
+	},
 };
 
 var assign_organ_player_damage_only = Object.assign(

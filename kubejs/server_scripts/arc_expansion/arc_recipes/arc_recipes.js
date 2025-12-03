@@ -1,5 +1,5 @@
 ServerEvents.recipes((event) => {
-	// "未照耀的荣光"
+	// “未照耀的荣光”
 	event.recipes.summoningrituals
 		.altar("kubejs:ritual_catalyst")
 		.id("arc_expansion:unbrilliant_glory")

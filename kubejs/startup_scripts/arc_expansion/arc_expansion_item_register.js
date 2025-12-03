@@ -559,13 +559,13 @@ StartupEvents.registry("item", (event) => {
 			.addTextLines("ctrl", [
 				LEADING_SYMBOL,
 				Text.gray({
-					translate: "rc_expansion.tooltips.unbrilliant_glory.4",
+					translate: "arc_expansion.tooltips.unbrilliant_glory.4",
 				}),
 			])
 			.addTextLines("ctrl", [
 				LEADING_SYMBOL,
 				Text.gray({
-					translate: "rc_expansion.tooltips.unbrilliant_glory.5",
+					translate: "arc_expansion.tooltips.unbrilliant_glory.5",
 				}),
 			])
 			.addScore("strength", 1.5)

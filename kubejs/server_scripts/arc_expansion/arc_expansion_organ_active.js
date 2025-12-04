@@ -43,7 +43,7 @@ const dlcTemplateOrganActiveStrategies = {
 		attributeMapValueAddition(attributeMap, global.ATTACK_SPEED, 1.5);
 		let player = event.player;
 		player.potionEffects.add(
-			"arc_expansion:unbrilliant_glory_effect",
+			"arc_expansion:stratagem_meltdown_effect",
 			20 * 2,
 			0,
 			false,

@@ -576,7 +576,7 @@ StartupEvents.registry("item", (event) => {
 		.tag("kubejs:damage_only")
 		.tag("kubejs:key_pressed");
 
-	// “未照耀的荣光”
+	// “策略：熔毁”
 	registerOrgan(
 		new Organ("arc_expansion:stratagem_meltdown")
 			// 基础描述（default）
@@ -616,6 +616,6 @@ StartupEvents.registry("item", (event) => {
 	)
 		.texture("arc_expansion:item/organs/stratagem_meltdown")
 		.tag("itemborders:gold")
-		.tag("kubejs:damage_only")
-		.tag("kubejs:active");
+		.tag("kubejs:active")
+		.tag("kubejs:damage_only");
 });

@@ -71,5 +71,6 @@
 	"arc_expansion.tooltips.unbrilliant_glory.2": "激活后，攻击力增加150%",
 	"arc_expansion.tooltips.unbrilliant_glory.3": "造成伤害时，对自身前方6格所有敌人额外附带11%攻击力的真实伤害",
 	"arc_expansion.tooltips.unbrilliant_glory.4": "使造成伤害-25%",
-	"arc_expansion.tooltips.unbrilliant_glory.5": "冷却时间71秒"
+	"arc_expansion.tooltips.unbrilliant_glory.5": "冷却时间71秒",
+	"item.arc_expansion.stratagem_meltdown": "策略：熔毁"
 }

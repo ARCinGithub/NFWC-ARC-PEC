@@ -15,6 +15,29 @@ const dlcTemplateOrganPlayerTickStrategies = {
 			Math.max(event.player.getFoodLevel() + 1, 20),
 		);
 	},
+
+	// “策略：熔毁”
+	"arc_expansion:stratagem_meltdown": function (event, organ) {
+		let player = event.player;
+		if (!player.hasEffect("arc_expansion:stratagem_meltdown_effect")) {
+			return;
+		}
+		player.potionEffects.add(
+			"arc_expansion:stratagem_meltdown_effect",
+			20 * 2,
+			0,
+			false,
+			false,
+		);
+
+		// 确保新血量不低于 4
+		if (event.player.getHealth() - 8 > 4) {
+			// 直接设置玩家的新血量
+			event.player.setHealth(event.player.getHealth() - 8);
+		} else {
+			event.player.setHealth(4);
+		}
+	},
 };
 
 var assign_organ_player_tick = Object.assign(
@@ -38,28 +61,6 @@ const dlcTemplateOrganPlayerTickOnlyStrategies = {
 		if (player.isUnderWater()) {
 			// 给予水下呼吸
 			player.potionEffects.add("minecraft:water_breathing", 20, 0);
-		}
-	},
-
-	"arc_expansion:stratagem_meltdown": function (event, organ) {
-		let player = event.player;
-		if (!player.hasEffect("arc_expansion:stratagem_meltdown_effect")) {
-			return;
-		}
-		player.potionEffects.add(
-			"arc_expansion:stratagem_meltdown_effect",
-			20 * 2,
-			0,
-			false,
-			false,
-		);
-
-		// 确保新血量不低于 4
-		if (event.player.getHealth() - 8 > 4) {
-			// 直接设置玩家的新血量
-			event.player.setHealth(event.player.getHealth() - 8);
-		} else {
-			event.player.setHealth(4);
 		}
 	},
 };

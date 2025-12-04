@@ -1,3 +1,4 @@
+// priority: 500
 ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('kubejs:active_pill', (item, advanced, text) => {
         addForTextLines(text, [[Text.gold(Text.translatable("kubejs.tooltips.active_pill.1")), Text.aqua(Text.translatable("kubejs.tooltips.active_pill.2"))], [Text.gray(Text.translatable("kubejs.tooltips.active_pill.3"))]], 1);
@@ -12,36 +13,18 @@ ItemEvents.tooltip((tooltip) => {
         text.add(Text.gray(Text.translatable("kubejs.tooltips.healing_additive.2")));
     })
 
+    tooltip.addAdvanced('kubejs:colorful_candy', (item, advanced, text) => {
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.1"))
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.2"))
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.3"))
+    })
+
     tooltip.addAdvanced('kubejs:eye_of_fortress', (item, advanced, text) => {
         text.add(Text.darkRed(Text.translatable("kubejs.tooltips.eye_of_fortress.1")));
     })
 
     tooltip.addAdvanced('kubejs:god_consciousness', (item, advanced, text) => {
         text.add(1, [Text.gold(Text.translatable("kubejs.tooltips.god_consciousness.1")), Text.yellow(getMobNameByType(item.nbt?.mobType))]);
-    })
-
-    tooltip.addAdvanced('kubejs:secret_of_rain', (item, advanced, text) => {
-        if (tooltip.shift) {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.2")), Text.blue(Text.translatable("kubejs.tooltips.secret_of_rain.5")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.3")), Text.gold(Text.translatable("kubejs.tooltips.secret_of_rain.6")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.4"))]);
-        } else {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.2")), Text.blue(Text.translatable("kubejs.tooltips.secret_of_rain.7")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.3")), Text.gold(Text.translatable("kubejs.tooltips.secret_of_rain.8")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_rain.4"))]);
-        }
-    })
-
-    tooltip.addAdvanced('kubejs:secret_of_heart', (item, advanced, text) => {
-        if (tooltip.shift) {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.2")), Text.of(Text.translatable("kubejs.tooltips.secret_of_heart.5")).color('#f781ed').bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.3")), Text.gold(Text.translatable("kubejs.tooltips.secret_of_heart.6")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.4"))]);
-        } else {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.2")), Text.of(Text.translatable("kubejs.tooltips.secret_of_heart.7")).color('#f781ed').bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.3")), Text.gold(Text.translatable("kubejs.tooltips.secret_of_heart.8")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_heart.4"))]);
-        }
-    })
-
-    tooltip.addAdvanced('kubejs:secret_of_bloom', (item, advanced, text) => {
-        if (tooltip.shift) {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.2")), Text.aqua(Text.translatable("kubejs.tooltips.secret_of_bloom.4")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.3"))]);
-        } else {
-            text.add([Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.1")).italic(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.2")), Text.aqua(Text.translatable("kubejs.tooltips.secret_of_bloom.5")).bold(), Text.gray(Text.translatable("kubejs.tooltips.secret_of_bloom.3"))]);
-        }
     })
 
 
@@ -158,16 +141,20 @@ ItemEvents.tooltip((tooltip) => {
     })
 
     tooltip.addAdvanced('kubejs:candy_bag', (item, advanced, text) => {
-        text.add(Text.darkGray(Text.translatable("kubejs.tooltips.candy_bag.1")));
+        text.add(Text.gray(Text.translatable("kubejs.tooltips.candy_bag.1")));
     })
+    
+    tooltip.addAdvanced('kubejs:eye_of_dragon', (item, advanced, text) => {
+        text.add(Text.gray(Text.translatable("kubejs.tooltips.eye_of_dragon.1")));
+    })
+
 
     tooltip.addAdvanced('art_of_forging:potent_mixture', (item, advanced, text) => {
         text.add(Text.gray(Text.translatable("kubejs.tooltips.potent_mixture.1")));
     })
 
-    tooltip.addAdvanced('witherstormmod:withered_nether_star', (item, advanced, text) => {
-        text.add(Text.darkGray(Text.translatable("kubejs.tooltips.withered_nether_star.1")));
-    })
+    
+
 
     tooltip.addAdvanced('kubejs:organ_charm', (item, advanced, text) => {
         let lineNum = 1

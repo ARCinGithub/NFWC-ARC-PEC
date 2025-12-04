@@ -1,13 +1,13 @@
-[2025-12-04 13:49:48] [INFO]: I18nUpdate Mod 3.7.0 is loaded in 1.19.2 with Forge
-[2025-12-04 13:49:48] [DEBUG]: Minecraft path: D:\Document\.minecraft\versions\NFWC-ARC-PEC
-[2025-12-04 13:49:48] [DEBUG]: Local Storage Pos: C:\Users\ARC
-[2025-12-04 13:49:49] [INFO]: Using fastest url: http://downloader1.meitangdehulu.com:22943/
-[2025-12-04 13:49:49] [DEBUG]: Using asset root: http://downloader1.meitangdehulu.com:22943/
-[2025-12-04 13:49:49] [DEBUG]: Local file C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip has been updated recently.
-[2025-12-04 13:49:49] [DEBUG]: Already up to date.
-[2025-12-04 13:49:49] [DEBUG]: Local file C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip has been updated recently.
-[2025-12-04 13:49:49] [DEBUG]: Already up to date.
-[2025-12-04 13:49:49] [INFO]: Converting: C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip
-[2025-12-04 13:49:49] [INFO]: Converting: C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip
-[2025-12-04 13:49:49] [INFO]: Converted: [C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip, C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip] -> C:\Users\ARC\.i18nupdatemod\1.19.2\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip
-[2025-12-04 13:49:49] [INFO]: Synchronized: C:\Users\ARC\.i18nupdatemod\1.19.2\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip -> D:\Document\.minecraft\versions\NFWC-ARC-PEC\resourcepacks\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip
+[2025-12-04 13:58:20] [INFO]: I18nUpdate Mod 3.7.0 is loaded in 1.19.2 with Forge
+[2025-12-04 13:58:20] [DEBUG]: Minecraft path: D:\Document\.minecraft\versions\NFWC-ARC-PEC
+[2025-12-04 13:58:20] [DEBUG]: Local Storage Pos: C:\Users\ARC
+[2025-12-04 13:58:20] [INFO]: Using fastest url: http://downloader1.meitangdehulu.com:22943/
+[2025-12-04 13:58:20] [DEBUG]: Using asset root: http://downloader1.meitangdehulu.com:22943/
+[2025-12-04 13:58:20] [DEBUG]: Local file C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip has been updated recently.
+[2025-12-04 13:58:20] [DEBUG]: Already up to date.
+[2025-12-04 13:58:20] [DEBUG]: Local file C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip has been updated recently.
+[2025-12-04 13:58:20] [DEBUG]: Already up to date.
+[2025-12-04 13:58:20] [INFO]: Converting: C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip
+[2025-12-04 13:58:20] [INFO]: Converting: C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip
+[2025-12-04 13:58:21] [INFO]: Converted: [C:\Users\ARC\.i18nupdatemod\1.19\Minecraft-Mod-Language-Modpack-1-19.zip, C:\Users\ARC\.i18nupdatemod\1.18\Minecraft-Mod-Language-Modpack-1-18.zip] -> C:\Users\ARC\.i18nupdatemod\1.19.2\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip
+[2025-12-04 13:58:21] [INFO]: Synchronized: C:\Users\ARC\.i18nupdatemod\1.19.2\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip -> D:\Document\.minecraft\versions\NFWC-ARC-PEC\resourcepacks\Minecraft-Mod-Language-Modpack-Converted-1.19.2.zip

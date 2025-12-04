@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 500
 
 const playerChestCavityHashMap = new Map();
 const playerChestCavityPosMap = new Map();
@@ -45,11 +45,21 @@ PlayerEvents.inventoryClosed((event) => {
         return
     }
     global.initChestCavityIntoMap(player, true)
+
+    
     let itemMap = getPlayerChestCavityItemMap(player)
     if (player.persistentData.contains(organActive) && player.persistentData.getInt(organActive) == 1) {
         return
     }
-    if (itemMap.has('kubejs:long_lasting_pill') || itemMap.has('kubejs:long_lasting_pill_gold')) {
+    let activeFlag = false
+    itemMap.forEach(organ => {
+        if (player.getChestCavityInstance().inventory.hasAnyMatching(item => {
+            return item.hasTag('kubejs:auto_active')
+        })) {
+            activeFlag = true
+        }
+    })
+    if (activeFlag) {
         global.updatePlayerActiveStatus(event.player)
         player.persistentData.putInt(organActive, 1)
     }

@@ -1,5 +1,7 @@
+// priority: 900
 function DefaultOrgan(itemID) {
     this.itemID = itemID
+    this.pseudoOrgan = false
     this.organScores = []
     this.defaultTextLines = []
     this.shiftTextLines = []
@@ -18,6 +20,10 @@ DefaultOrgan.prototype = {
             let typeName = global.SCORE_MAP[score.id]
             this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_score.1")), Text.yellow(String(value)), Text.gray(Text.translatable("kubejs.tooltips.organ_score.2")), Text.yellow(typeName)])
         })
+        return this
+    },
+    setPseudo: function (boolean) {
+        this.pseudoOrgan = boolean
         return this
     },
 }
@@ -73,6 +79,9 @@ ItemEvents.tooltip((tooltip) => {
         }
     })
 
+    /**
+     * @param {DefaultOrgan} organ 
+     */
     function registerDefaultOrganToolTips(organ) {
         tooltip.addAdvanced(organ.itemID, (item, advanced, text) => {
             text.removeIf(e => {
@@ -111,21 +120,21 @@ ItemEvents.tooltip((tooltip) => {
                     }
 
                     lineNum = addForTextLines(text, organ.defaultTextLines, lineNum);
-                    if (organ.shiftTextLines && organ.shiftTextLines.length != 0) {
+                    if (organ.shiftTextLines && organ.shiftTextLines.length != 0 && !organ.pseudoOrgan) {
                         text.add(lineNum++, [
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.3")).gold(),
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.4")).yellow().bold(),
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.5")).gold(),
                         ]);
                     }
-                    if (organ.ctrlTextLines && organ.ctrlTextLines.length != 0) {
+                    if (organ.ctrlTextLines && organ.ctrlTextLines.length != 0 && !organ.pseudoOrgan) {
                         text.add(lineNum++, [
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.3")).aqua(),
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.6")).yellow().bold(),
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.7")).aqua(),
                         ]);
                     }
-                    if (organ.altTextLines && organ.altTextLines.length != 0) {
+                    if (organ.altTextLines && organ.altTextLines.length != 0 && !organ.pseudoOrgan) {
                         text.add(lineNum++, [
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.3")).red(),
                             Text.of(Text.translatable("kubejs.tooltips.organ_score.8")).yellow().bold(),

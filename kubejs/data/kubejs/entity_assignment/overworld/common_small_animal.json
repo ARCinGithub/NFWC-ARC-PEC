@@ -1,9 +1,0 @@
-{
-  "chestcavity": "kubejs:types/overworld/common_small_animal.json",
-  "entities": [
-    "alexsmobs:bunfungus", 
-    "alexsmobs:flutter",
-    "twilightforest:squirrel",
-    "twilightforest:dwarf_rabbit"
-  ]
-}

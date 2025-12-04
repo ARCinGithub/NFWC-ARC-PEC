@@ -1,9 +1,0 @@
-{
-    "chestcavity": "kubejs:types/others/sickened.json",
-    "entities": [
-        "graveyard:nightmare",
-        "graveyard:acolyte",
-        "graveyard:corrupted_vindicator",
-        "graveyard:corrupted_pillager"
-    ]
-  }

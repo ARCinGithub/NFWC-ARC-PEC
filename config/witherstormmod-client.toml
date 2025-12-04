@@ -16,7 +16,7 @@
 	#DEFAULT=false. Specifies if the low res models should be used when being rendered via the distant renderer. Reload Type: NONE
 	witherStormLOD = false
 	#DEFAULT=false. Uses larger cubes to make up the the phase 4 and up models. Should result in a performance increase. Reload Type: NONE
-	lowResModels = true
+	lowResModels = false
 	#DEFAULT=true. Toggles the rendering of the tractor beams. Reload Type: NONE
 	renderTractorBeams = true
 	#DEFAULT=true. Specifies if a pulsating effect, mimicking endermen pulling the Wither Storm apart, should be rendered once its evolution is complete. Reload Type: NONE
@@ -46,7 +46,7 @@
 	#DEFAULT=true. Specifies if sky ambience affects (sky darkening) should render when a Wither Storm is nearby. Reload Type: NONE
 	renderSkyAmbienceEffects = true
 	#DEFAULT=true. Specifies if particles inside the tractor beams of the Wither Storm should render. Reload Type: NONE
-	tractorBeamParticles = false
+	tractorBeamParticles = true
 
 	#Flywheel compat
 	[client."flywheel compat"]

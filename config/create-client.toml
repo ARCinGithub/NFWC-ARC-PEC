@@ -50,6 +50,9 @@
 	#.
 	#Setting this to true will prevent Create from sending you a warning when playing with Fabulous graphics enabled
 	ignoreFabulousWarning = false
+	#.
+	#Disable to prevent being rotated while seated on a Moving Contraption
+	rotateWhenSeated = true
 
 	#.
 	#Configure your vision range when submerged in Create's custom fluids
@@ -114,7 +117,7 @@
 	[client.ponder]
 		#.
 		#Slow down a ponder scene whenever there is text on screen.
-		comfyReading = true
+		comfyReading = false
 		#.
 		#Show additional info in the ponder view and reload scene scripts more frequently.
 		editingMode = false

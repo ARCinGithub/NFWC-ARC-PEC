@@ -1,0 +1,859 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "68FC9ADE605CB4D9"
+	group: "0F9EA9FA28C88D03"
+	icon: "create:wrench"
+	id: "68FC9ADE605CB4D9"
+	images: [{
+		alpha: 200
+		click: ""
+		corner: false
+		dev: false
+		height: 10.0d
+		hover: [ ]
+		image: "kubejs:textures/task/create_00.png"
+		rotation: 0.0d
+		width: 29.358974358974358d
+		x: -2.0d
+		y: -14.25d
+	}]
+	order_index: 1
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0861DDE9767A3E9D"]
+			description: [
+				"本整合包中，对&d「机械动力」&r的引导&2不会十分详尽&r，仅阐述整合包&a主线流程中会用到的基本功能&r。"
+				""
+				"当然，无论怎样，我们都推荐你善用&a“W键－思索”&r，这是模组自身携带的十分详细的引导教学！"
+				""
+				"{image:kubejs:textures/task/create_2.png width:70 height:50 align:1}"
+			]
+			icon: "create:wrench"
+			id: "4EB8FE041AB6DA8E"
+			rewards: [{
+				count: 3
+				id: "48512F3696E650D8"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "请思索吧"
+			tasks: [{
+				id: "17AACB586D5E3EB9"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "引言：机械动力引导思路"
+			x: -11.75d
+			y: -7.5d
+		}
+		{
+			dependencies: ["16AC61A6416FD6E0"]
+			description: [
+				"有了产生应力的手段，接下来便是着手制作消耗应力的机械——先为此&a准备资源&r吧。"
+				""
+				"在&d「机械动力」&r中，最主要使用的矿物为&6铜矿&r、&6铁矿&r、&6锌矿&r。"
+				""
+				"但是，在发展初期，比起这些矿物，需求量更大的是&6安山岩&r。"
+				""
+				"&e总之先采集一些锌锭和安山岩吧！&r"
+			]
+			icon: "minecraft:andesite"
+			id: "3A98FA709F0DEA42"
+			rewards: [{
+				count: 3
+				id: "6D9415D934A5ECBE"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "地下矿工"
+			tasks: [
+				{
+					count: 4L
+					id: "41B90ADEBBD5C50A"
+					item: "create:raw_zinc"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "22E30FBE0EDB536D"
+					item: "minecraft:andesite"
+					type: "item"
+				}
+			]
+			title: "基础物资收集"
+			x: -4.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["1112F6121BC5A1E5"]
+			description: [
+				"如果你想尝试为你的工厂实现自动化，离不开使用&6传送带&r。"
+				""
+				"请对&6传送带&r使用&a「W－思索」&r，以及在思索界面中，&e点击“查看下一个场景”以了解进阶用法&r。"
+			]
+			id: "0C5511D51B5FF508"
+			rewards: [{
+				count: 2
+				id: "58B2D0E75B94DFB4"
+				item: "create:andesite_funnel"
+				type: "item"
+			}]
+			subtitle: "浪漫"
+			tasks: [{
+				count: 16L
+				id: "40BF67FF7A40E7F8"
+				item: "create:belt_connector"
+				type: "item"
+			}]
+			title: "自动化"
+			x: -2.25d
+			y: -7.5d
+		}
+		{
+			dependencies: ["43140AED474C64BC"]
+			description: [
+				"&6动力辊压机&r，他可以用于各种&a压制&r工作，比如生产铁片。这需要在&6置物台&r上进行。"
+				""
+				"&7如有疑问，请查看「W－思索」。&r"
+			]
+			icon: "create:mechanical_press"
+			id: "1112F6121BC5A1E5"
+			rewards: [{
+				id: "59E5912C784B0BD4"
+				item: "create:wrench"
+				type: "item"
+			}]
+			subtitle: "制作更多材料"
+			tasks: [
+				{
+					id: "66321679712B0464"
+					item: "create:mechanical_press"
+					type: "item"
+				}
+				{
+					id: "5E8AFF5C2269B679"
+					item: "create:depot"
+					type: "item"
+				}
+			]
+			title: "第一台机器!"
+			x: -2.25d
+			y: -5.75d
+		}
+		{
+			dependencies: [
+				"2726CA56D0F8CF32"
+				"3E0913E20483FD71"
+			]
+			description: [
+				"&7查看配方，将砂纸给予机械手，打磨制作出磨制玫瑰石英之后，便可继续合成，制作出动力合成器。"
+				""
+				"&6动力合成器&r能合成大于4×4的物品，&e部分配方需要专门使用动力合成器来合成&r。"
+			]
+			id: "6C7A1C7252229459"
+			rewards: [{
+				count: 3
+				id: "4E981F248B0DD603"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "自动合成？"
+			tasks: [{
+				id: "0F7653EE36653D62"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			title: "更复杂的合成"
+			x: 4.5d
+			y: -5.75d
+		}
+		{
+			dependencies: ["0C5511D51B5FF508"]
+			description: ["&7请使用「W－思索」。&r"]
+			id: "55FAA1463318A7BA"
+			rewards: [{
+				count: 2
+				id: "6D279C30315CBB72"
+				item: "create:andesite_funnel"
+				type: "item"
+			}]
+			subtitle: "隧道"
+			tasks: [{
+				count: 2L
+				id: "59F53789EB97294A"
+				item: "create:andesite_tunnel"
+				type: "item"
+			}]
+			title: "分拣"
+			x: -0.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["1112F6121BC5A1E5"]
+			description: [
+				"&6工程师护目镜：&r观察一个机械的具体信息。"
+				""
+				"&6应力表：&r接入后可观察整体的&a应力&r使用情况。"
+				""
+				"&6速度表：&r接入后观察此处的&a转速&r。"
+			]
+			icon: "create:goggles"
+			id: "47B5B3FBC91E73D7"
+			rewards: [
+				{
+					count: 3
+					id: "601207478EFFD3B5"
+					item: {
+						Count: 1b
+						id: "lightmanscurrency:coin_iron"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "294603C5ED8EF1B5"
+					item: "create:rotation_speed_controller"
+					type: "item"
+				}
+			]
+			subtitle: "注意你的应力"
+			tasks: [
+				{
+					id: "459373F37572317D"
+					item: "create:goggles"
+					type: "item"
+				}
+				{
+					id: "37DF4D0DF084ABB5"
+					item: "create:speedometer"
+					type: "item"
+				}
+				{
+					id: "1A95C7E2B18D9918"
+					item: "create:stressometer"
+					type: "item"
+				}
+			]
+			title: "应力检测员"
+			x: -0.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["79DE01B778B14C0E"]
+			description: [
+				"&c如果你仅仅是需要完成主线任务中必须制作的内容，那至此已经足够了！&r"
+				""
+				"&6动力搅拌机&r中的&a某些配方&r需要提供&e“加热”&r环境。"
+				""
+				"你可以使用&6打火石&r等原版方式进行加热，但&6烈焰人燃烧室&r将&e提供更高的温度&r，能够&e支持更多的配方&r。"
+				""
+				"&7记得用「W－思索」查看更详细的信息。&r"
+			]
+			id: "75EA9654A6522F50"
+			rewards: [{
+				count: 8
+				id: "3453BC2A3A204F06"
+				item: "minecraft:coal_block"
+				type: "item"
+			}]
+			subtitle: "更高的温度"
+			tasks: [{
+				id: "77A262CC27D75967"
+				item: "create:empty_blaze_burner"
+				type: "item"
+			}]
+			title: "更好的搅拌"
+			x: 2.75d
+			y: -7.5d
+		}
+		{
+			dependencies: [
+				"073C0A15ECBF7139"
+				"765744E614A9A768"
+				"03950447AF558398"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"再次重新介绍一下，机械动力配备了名为&d思索&r的教学模式。你可以在某些机器和物品上发现它的痕迹。"
+				""
+				"按照提示将&e鼠标放在物品上长按[w]&r，你便可以看到一个非常详细的&2互动式讲解&r。"
+				""
+				"&c在绝大多数情况下，你的问题会通过「思索」得到解决。&r"
+				""
+				"{image:kubejs:textures/task/create_1.png width:80 height:45 align:1}"
+			]
+			icon: {
+				Count: 1b
+				id: "irons_spellbooks:pumpkin_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "16AC61A6416FD6E0"
+			rewards: [
+				{
+					count: 3
+					id: "06990D6C075B3A81"
+					item: {
+						Count: 1b
+						id: "lightmanscurrency:coin_iron"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "6465E2C4034B2CFF"
+					item: "simplehats:hatbag_rare"
+					type: "item"
+				}
+			]
+			subtitle: "史上最强的互动式教学系统"
+			tasks: [{
+				id: "084898E67FC7EAD0"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "思索"
+			x: -6.25d
+			y: -7.5d
+		}
+		{
+			dependencies: ["62CFA299ADC2A8B0"]
+			description: [
+				"&6动力搅拌器&r要求转速至少达到&e32RPM&r才能够正常驱动。"
+				""
+				"这意味着你可能需要&a多次使用大小齿轮进行变速&r，才能够满足这个需求。"
+				""
+				"你还需要一个&6工作盆&r来盛放需要搅拌的物品。&7（使用时将物品投入工作盆即可）&r"
+			]
+			icon: "create:mechanical_mixer"
+			id: "79DE01B778B14C0E"
+			rewards: [{
+				count: 3
+				id: "45B4ACF639BBC879"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "获取黄铜的第一步"
+			tasks: [
+				{
+					id: "66CEA69C2C1AAE68"
+					item: "create:mechanical_mixer"
+					type: "item"
+				}
+				{
+					id: "2E37258D630F4D14"
+					item: "create:basin"
+					type: "item"
+				}
+			]
+			title: "加速！使用动力搅拌器！"
+			x: 1.0d
+			y: -5.75d
+		}
+		{
+			dependencies: ["55FAA1463318A7BA"]
+			description: ["&7请使用「W－思索」。&r"]
+			id: "4F9AA857AEB0C0AE"
+			rewards: [{
+				count: 2
+				id: "1026B2B5F7FB7240"
+				item: "create:brass_funnel"
+				type: "item"
+			}]
+			subtitle: "更加复杂的功能实现"
+			tasks: [{
+				count: 2L
+				id: "66683DB6DC8C8C95"
+				item: "create:brass_tunnel"
+				type: "item"
+			}]
+			title: "获得升级"
+			x: 1.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["0C5511D51B5FF508"]
+			description: ["&7请使用「W－思索」。&r"]
+			id: "38B27FBD44641B53"
+			rewards: [{
+				id: "6FCB2BA3FEA80C6F"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "物品下行"
+			tasks: [{
+				id: "06D9CE0D0B4713A6"
+				item: "create:chute"
+				type: "item"
+			}]
+			title: "垂直传递"
+			x: -0.5d
+			y: -9.25d
+		}
+		{
+			dependencies: ["38B27FBD44641B53"]
+			description: ["&7请使用「W－思索」。&r"]
+			id: "4D631051E9BE0F50"
+			rewards: [{
+				count: 3
+				id: "302A384EDFAA1710"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "高级功能实现"
+			tasks: [{
+				id: "3545374EA749C19A"
+				item: "create:smart_chute"
+				type: "item"
+			}]
+			x: 1.25d
+			y: -9.25d
+		}
+		{
+			dependencies: ["073C0A15ECBF7139"]
+			dependency_requirement: "all_started"
+			description: [
+				"&6羊毛&r或者&6风帆&r都可以&e增加风车的应力&r，而&6风帆&r以外的方块都必须经过&6胶水&r的连接才能被风车带动。"
+				""
+				"当然你也可以连接一些毫不相干的东西，只要你喜欢,它都会随着风车转动。"
+			]
+			id: "2CF3F1871D1C18D1"
+			rewards: [{
+				count: 3
+				id: "22ADB4C6F8D44660"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "把方块们粘合起来"
+			tasks: [{
+				id: "4D15DDD7748E75AD"
+				item: {
+					Count: 1b
+					id: "create:super_glue"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "胶水"
+			x: -6.25d
+			y: -9.5d
+		}
+		{
+			dependencies: ["4EB8FE041AB6DA8E"]
+			description: [
+				"现在你可以通过机械动力来&2制作各种傀儡辅助你进行战斗，他们十分强大，并且能随身收放&r。"
+				""
+				"该模组的教学书十分详细并且有汉化，所以无需过多引导，请&2自行查看教学书&r，并通过在JEI搜索中输入&d“@modular”&r上手该模组。"
+			]
+			icon: {
+				Count: 1b
+				id: "modulargolems:metal_golem_holder"
+				tag: {
+					golem_materials: [
+						{
+							material: "create:railway"
+							part: "modulargolems:metal_golem_arm"
+						}
+						{
+							material: "create:railway"
+							part: "modulargolems:metal_golem_body"
+						}
+						{
+							material: "create:railway"
+							part: "modulargolems:metal_golem_arm"
+						}
+						{
+							material: "create:railway"
+							part: "modulargolems:metal_golem_legs"
+						}
+					]
+				}
+			}
+			id: "6E7B608B774A9A72"
+			rewards: [
+				{
+					id: "521DA50B5AF38CD5"
+					item: {
+						Count: 1b
+						id: "patchouli:guide_book"
+						tag: {
+							"patchouli:book": "modulargolems:golem_guide"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "59599659EA3D1340"
+					item: "lightmanscurrency:coin_iron"
+					type: "item"
+				}
+			]
+			subtitle: "召唤傀儡辅助战斗"
+			tasks: [{
+				id: "604FE934774717CB"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "机械降神"
+			x: -9.75d
+			y: -5.75d
+		}
+		{
+			dependencies: ["3A98FA709F0DEA42"]
+			description: [
+				"在&d「机械动力」&r中，制作不同等级的机械需要不同的机壳，而最基础的便是&6安山机壳&r。"
+				""
+				"先通过工作台合成一些&6安山合金&r。"
+				""
+				"使用&6斧头&r右键&6原木&r，使其转化为&6去皮原木&r。再手持&6安山合金&r，&a右键去皮原木&r以获得&6安山机壳&r。"
+			]
+			icon: "create:andesite_alloy"
+			id: "43140AED474C64BC"
+			rewards: [{
+				count: 5
+				id: "2A9AEC0CDF22A6AC"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 4L
+					id: "4B6E6EF43A48BFBA"
+					item: "create:andesite_alloy"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "18C941A9BFA658F3"
+					item: "create:andesite_casing"
+					type: "item"
+				}
+			]
+			title: "基础的机壳"
+			x: -4.5d
+			y: -5.75d
+		}
+		{
+			dependencies: ["47B5B3FBC91E73D7"]
+			description: [
+				"通过&6小齿轮&r和&6大齿轮&r，可以达到调节转速的目的——当然你需要先了解&a应力&r和&a转速&r有什么作用。"
+				""
+				"此处提供了一个图文案例。"
+				""
+				"但是&c更推荐对齿轮使用「W－思索」来查看动画版本的解释。&r"
+				""
+				"{image:kubejs:textures/task/create_5.png width:200 height:126 align:1}"
+			]
+			icon: "minecraft:writable_book"
+			id: "62CFA299ADC2A8B0"
+			rewards: [{
+				id: "6B833EF7D9BA4A1C"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "知识掌握"
+			tasks: [
+				{
+					id: "51826B96218462E8"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "2CD5644DC28ACF96"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			title: "应力与转速"
+			x: 1.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["4EB8FE041AB6DA8E"]
+			description: [
+				"&d「机械动力」&r作为科技模组，也有着能源的概念——&e应力&r。"
+				""
+				"&e应力不可以被存储，只能在产生的时候实时消耗。&r"
+				""
+				"如下图展示了一个简单的机械模块，其中水车产生应力带动机械运转，&e简单来说，你需要一个装置产生应力，让你的机械转起来！&r"
+				""
+				"{image:kubejs:textures/task/create_3.png width:160 height:109 align:1}"
+			]
+			icon: "minecraft:writable_book"
+			id: "1E631B88C8BC7AEA"
+			rewards: [{
+				count: 2
+				id: "5A0DEC0CC22253AE"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "驱动机械的能源"
+			tasks: [{
+				id: "47A5DCB6D8454E56"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "应力"
+			x: -9.75d
+			y: -7.5d
+		}
+		{
+			dependencies: ["1E631B88C8BC7AEA"]
+			description: [
+				"&c请优先使用「W－思索」查看其用法！"
+				""
+				"通过水流动带动&6水车&r旋转&e产生应力&r。"
+				""
+				"&6大型水车&r提供更高的应力，但是转速相对较低。"
+			]
+			icon: "create:water_wheel"
+			id: "765744E614A9A768"
+			rewards: [{
+				id: "3A946C1C77EDC594"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0D3A46CE9C84CC34"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "create:water_wheel"
+							}
+							{
+								Count: 1b
+								id: "create:large_water_wheel"
+							}
+						]
+					}
+				}
+				title: "查看详情"
+				type: "item"
+			}]
+			title: "水车"
+			x: -8.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["1E631B88C8BC7AEA"]
+			description: [
+				"&c请优先使用「W－思索」查看其用法！"
+				""
+				"在前方放置包含&6羊毛&r / &6风帆&r，&a空手右键&r风车轴承即可转化为动态结构并开始&e产生应力&r。"
+				""
+				"如下图，当然你也可以将风车竖直放置。"
+				""
+				"{image:kubejs:textures/task/create_4.png width:160 height:122 align:1}"
+			]
+			icon: "create:windmill_bearing"
+			id: "073C0A15ECBF7139"
+			rewards: [{
+				count: 2
+				id: "1332560B59D0EF36"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "2BE60F45A82C9090"
+					item: "create:windmill_bearing"
+					type: "item"
+				}
+				{
+					id: "7840A66915CF8795"
+					item: "create:white_sail"
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -9.5d
+		}
+		{
+			dependencies: ["1E631B88C8BC7AEA"]
+			description: [
+				"&c请优先使用「W－思索」查看其用法！"
+				""
+				"玩家&a右键&r&6手摇曲柄&r即可&e产生应力&r。"
+			]
+			id: "03950447AF558398"
+			rewards: [{
+				id: "2CCA8EDAE1A35489"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "34C11E2A009A9876"
+				item: "create:hand_crank"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -5.75d
+		}
+		{
+			dependencies: ["4D631051E9BE0F50"]
+			description: [
+				"将&6过滤器&r放在&6智能溜槽&r中即可使用。"
+				""
+				"&7过滤器内可以放入另一个过滤器，可以制作更多物品的过滤。"
+			]
+			icon: {
+				Count: 1b
+				id: "create:filter"
+				tag: {
+					Blacklist: 0b
+					Items: {
+						Items: [{
+							Count: 1b
+							Slot: 0
+							id: "minecraft:iron_ingot"
+						}]
+						Size: 18
+					}
+					RespectNBT: 0b
+				}
+			}
+			id: "2E902703BDD78C38"
+			rewards: [{
+				id: "5FEFAE1669897A44"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "1684CEAA32CA1058"
+					item: {
+						Count: 1b
+						id: "create:filter"
+						tag: {
+							Blacklist: 0b
+							Items: {
+								Items: [{
+									Count: 1b
+									Slot: 0
+									id: "minecraft:iron_ingot"
+								}]
+								Size: 18
+							}
+							RespectNBT: 0b
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "06B8BE6D4C7FA193"
+					item: "create:attribute_filter"
+					type: "item"
+				}
+			]
+			x: 2.75d
+			y: -9.25d
+		}
+		{
+			dependencies: ["79DE01B778B14C0E"]
+			description: [
+				"&6机械手&r拥有众多功能，你可以通过&e「W－思索」&r来查阅详情。"
+				""
+				"需要注意的是，如果你想&2给予机械手某样工具&r，请&2手持工具右键&r机械手的腕部&7（而非手掌）&r。"
+			]
+			id: "2726CA56D0F8CF32"
+			rewards: [{
+				id: "1342F1D3E7DD574D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "机械手"
+			tasks: [{
+				id: "425E74ADFEF0B141"
+				item: "create:deployer"
+				type: "item"
+			}]
+			title: "人工智能？"
+			x: 2.75d
+			y: -5.75d
+		}
+		{
+			dependencies: ["6C7A1C7252229459"]
+			description: [
+				"至此，&d「机械动力」模组&r的引导任务便结束了。"
+				""
+				"&e但如果你想要深度游玩机械动力，这才仅仅是刚刚开始....&r"
+				""
+				"&7如果你需要查看机械动力还有什么机械，只需要在JEI中输入“@create”即可查找。&r"
+			]
+			icon: "minecraft:writable_book"
+			id: "42F925A930733650"
+			rewards: [{
+				id: "6AAEB937FB7A2932"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "自由探索"
+			tasks: [{
+				id: "04110D6EA0809E59"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "机械的浪漫源于创造！"
+			x: 7.0d
+			y: -5.75d
+		}
+		{
+			dependencies: ["75EA9654A6522F50"]
+			description: ["制作黄铜锭，再以同样的方法右键原木获取黄铜机壳。"]
+			icon: "create:brass_casing"
+			id: "3E0913E20483FD71"
+			rewards: [{
+				id: "4FEEF9C96349EEE3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "黄铜时代"
+			tasks: [
+				{
+					id: "566A74D86C43E69B"
+					item: "create:brass_ingot"
+					type: "item"
+				}
+				{
+					id: "5843EE3948C9B220"
+					item: "create:brass_casing"
+					type: "item"
+				}
+			]
+			title: "新的机壳"
+			x: 4.5d
+			y: -7.5d
+		}
+	]
+	title: "机械动力：让万物旋转"
+}

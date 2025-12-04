@@ -1,0 +1,79 @@
+[13:50:36] [INIT] KubeJS 1902.6.2-build.73; MC 1902 forge
+[13:50:36] [INIT] Loaded plugins:
+[13:50:36] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
+[13:50:36] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgeClientPlugin
+[13:50:36] [INIT] - dev.latvian.mods.kubejs.integration.forge.gamestages.GameStagesIntegration
+[13:50:36] [INIT] - net.yorunina.chestcavityjs.compat.ChestCavityJSPlugin
+[13:50:36] [INIT] - dev.ftb.mods.ftbxmodcompat.ftbquests.kubejs.KubeJSIntegration
+[13:50:36] [INIT] - dev.ftb.mods.ftbxmodcompat.ftbchunks.kubejs.FTBChunksKubeJSPlugin
+[13:50:36] [INIT] - dev.ftb.mods.ftbxmodcompat.ftbteams.kubejs.FTBTeamsKubeJSPlugin
+[13:50:36] [INIT] - com.squoshi.irons_spells_js.IronsSpellsJSPlugin
+[13:50:36] [INIT] - com.tom.createores.kubejs.KubeJSExcavation
+[13:50:36] [INIT] - dev.latvian.mods.kubejs.create.KubeJSCreatePlugin
+[13:50:36] [INIT] - com.momosoftworks.coldsweat.compat.kubejs.KubePlugin
+[13:50:36] [INIT] - com.prunoideae.powerfuljs.forge.PowerfulJSPluginForge
+[13:50:36] [INIT] - com.almostreliable.morejs.Plugin
+[13:50:36] [INIT] - net.yorunina.tetrajs.compat.TetraPlugin
+[13:50:36] [INIT] - com.almostreliable.lootjs.kube.LootJSPlugin
+[13:50:36] [INIT] - fr.frinn.custommachinery.common.integration.kubejs.CustomMachineryKubeJSPlugin
+[13:50:36] [INIT] - com.almostreliable.summoningrituals.compat.kubejs.AlmostKube
+[13:50:36] [INIT] - com.almostreliable.ponderjs.PonderJSPlugin
+[13:50:36] [INIT] - com.chen1335.renderjs.kubejs.RenderJSPlugin
+[13:50:39] [INFO] import.js#2: Loaded Java class 'dev.architectury.registry.CreativeTabRegistry'
+[13:50:39] [INFO] import.js#3: Loaded Java class 'net.minecraft.world.item.enchantment.EnchantmentCategory'
+[13:50:39] [INFO] import.js#4: Loaded Java class 'net.minecraft.world.entity.projectile.EyeOfEnder'
+[13:50:39] [INFO] import.js#5: Loaded Java class 'net.minecraft.core.Registry'
+[13:50:39] [INFO] import.js#6: Loaded Java class 'net.minecraft.tags.TagKey'
+[13:50:39] [INFO] import.js#7: Loaded Java class 'dev.xkmc.l2library.base.tabs.contents.AttributeEntry'
+[13:50:39] [INFO] import.js#8: Loaded Java class 'io.redspace.ironsspellbooks.api.registry.AttributeRegistry'
+[13:50:39] [INFO] import.js#9: Loaded Java class 'com.github.alexthe666.iceandfire.entity.EntityFireDragon'
+[13:50:39] [INFO] import.js#10: Loaded Java class 'com.github.alexthe666.iceandfire.entity.EntityIceDragon'
+[13:50:39] [INFO] import.js#11: Loaded Java class 'com.github.alexthe666.iceandfire.entity.EntityLightningDragon'
+[13:50:39] [INFO] Loaded script startup_scripts:import.js in 0.239 s
+[13:50:39] [INFO] Loaded script startup_scripts:client_init.js in 0.057 s
+[13:50:39] [ERROR] ! mrqx_extra_pack/mrqx_client_init.js#30: Error loading KubeJS script: startup_scripts:mrqx_extra_pack/mrqx_client_init.js': TypeError: Cannot convert undefined to an object.
+[13:50:39] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_register/mrqx_spell_register.js in 0.002 s
+[13:50:39] [ERROR] ! Error loading KubeJS script: startup_scripts:special/eye_finder.js': TypeError: TypeError: redeclaration of const $TagKey.
+[13:50:39] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_register/mrqx_item_register.js in 0.036 s
+[13:50:39] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_register/mrqx_sound_event_register.js in 0.0 s
+[13:50:39] [INFO] Loaded script startup_scripts:global.js in 0.018 s
+[13:50:40] [INFO] Loaded script startup_scripts:block_register.js in 0.0 s
+[13:50:40] [ERROR] ! Error loading KubeJS script: startup_scripts:creative_tab_register.js': TypeError: TypeError: redeclaration of const $CreativeTabRegistry.
+[13:50:40] [INFO] Loaded script startup_scripts:curios_register.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:custom_event.js in 0.002 s
+[13:50:40] [ERROR] ! Error loading KubeJS script: startup_scripts:enchant_register.js': TypeError: TypeError: redeclaration of const $EnchantmentCategory.
+[13:50:40] [INFO] Loaded script startup_scripts:entity_hurt.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:fluid_register.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:isb/school_register.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:isb/spell_register.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:item_modify.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:item_register.js in 0.003 s
+[13:50:40] [INFO] key_bind_register.js#1: Loaded Java class 'net.minecraft.client.KeyMapping'
+[13:50:40] [INFO] key_bind_register.js#2: Loaded Java class 'org.lwjgl.glfw.GLFW'
+[13:50:40] [INFO] key_bind_register.js#3: Loaded Java class 'dev.architectury.registry.client.keymappings.KeyMappingRegistry'
+[13:50:40] [INFO] Loaded script startup_scripts:key_bind_register.js in 0.056 s
+[13:50:40] [INFO] Loaded script startup_scripts:lunasdlc/globalluna.js in 0.006 s
+[13:50:40] [INFO] Loaded script startup_scripts:lunasdlc/isb_spell_luna.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:lunasdlc/itemsnew.js in 0.007 s
+[13:50:40] [INFO] Loaded script startup_scripts:lunasdlc/lunatabnew.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:lunasdlc/mobeffectnew.js in 0.002 s
+[13:50:40] [INFO] Loaded script startup_scripts:mob_effect_register.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:music_disc_register.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:organ_register.js in 0.01 s
+[13:50:40] [ERROR] ! Error loading KubeJS script: startup_scripts:special/l2_attribute.js': TypeError: TypeError: redeclaration of const $AttributeRegistry.
+[13:50:40] [INFO] Loaded script startup_scripts:special/sequenced_assembly_item.js in 0.0 s
+[13:50:40] [INFO] utils/constdef.js#1: Loaded Java class 'net.tigereye.chestcavity.util.ChestCavityUtil'
+[13:50:40] [INFO] Loaded script startup_scripts:utils/constdef.js in 0.012 s
+[13:50:40] [INFO] Loaded script startup_scripts:utils/organ_model.js in 0.004 s
+[13:50:40] [INFO] Loaded script startup_scripts:utils/translate_key.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:arc_expansion/arc_expansion_creative_tab_register.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:arc_expansion/arc_expansion_global.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:arc_expansion/arc_expansion_item_register.js in 0.002 s
+[13:50:40] [INFO] Loaded script startup_scripts:attribute_modify.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:arc_expansion/arc_register/arc_effect_register.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_forge_event.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_global.js in 0.001 s
+[13:50:40] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_register/mrqx_creative_tab_register.js in 0.0 s
+[13:50:40] [INFO] Loaded script startup_scripts:mrqx_extra_pack/mrqx_register/mrqx_effect_register.js in 0.0 s
+[13:50:40] [INFO] Loaded 37/42 KubeJS startup scripts in 2.999 s
+[13:50:52] [ERROR] ! client_init.js#3: Error occurred while handling event 'ClientEvents.init': ReferenceError: "TetraEffectFunctionalizationEffectGetter" is not defined.
